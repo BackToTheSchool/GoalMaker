@@ -1,0 +1,20 @@
+{% include "GoalMakerWeb/header.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Goal List</title>
+</head>
+<body>
+    {% if goal_list %}
+        <ul>
+        {% for goal in goal_list %}
+            <li><a href="{% url 'GoalMakerWeb:detail_goal' %}">
+                {{ goal.user_id }}.{{ goal.name }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No goals are available.</p>
+    {% endif %}
+</body>
+</html>

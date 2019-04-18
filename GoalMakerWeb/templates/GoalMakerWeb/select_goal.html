@@ -1,0 +1,26 @@
+{% include "GoalMakerWeb/header.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Select Goal</title>
+</head>
+<body>
+    <h1>Select Goal</h1>
+
+    <form action="{% url 'GoalMaker:detail_goal' %}" method="POST" content='text/html; charset=UTF-8'>
+        {% csrf_token %}
+        <input type="hidden" name="user_id" value="{{ request.session.user_id }}">
+        <label>
+            Name:
+            <select name="name">
+                {% for goal in goal_list %}
+                    <option value="{{ goal.name }}">{{ goal.name }}</option>
+                {% endfor %}
+            </select>
+        </label><br>
+
+        <input type="submit">
+    </form>
+</body>
+</html>

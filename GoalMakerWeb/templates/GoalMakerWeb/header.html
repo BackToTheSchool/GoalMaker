@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <a href="{% url 'GoalMakerWeb:main' %}">Main</a><br>
+    User
+    <ul>
+        {% if request.session.user_id is not None %}
+            <li><a href="{% url 'GoalMakerWeb:detail_user' %}">My Account</a></li>
+            <li><a href="{% url 'GoalMakerWeb:logout' %}">Logout</a></li>
+        </ul>
+
+        Goal
+        <ul>
+            <li><a href="{% url 'GoalMakerWeb:create_goal' %}">Create Goal</a></li>
+            <li><a href="{% url 'GoalMakerWeb:select_goal' %}">Select Goal</a></li>
+        </ul>
+        {% endif %}
+        {% if request.session.user_id is None %}
+            <li><a href="{% url 'GoalMakerWeb:create_user' %}">Sign Up</a></li>
+            <li><a href="{% url 'GoalMakerWeb:login' %}">Login</a></li>
+        </ul>
+        {% endif %}
+
+
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+{% include "GoalMakerWeb/header.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+</head>
+<body>
+    <h1>Sign Up</h1>
+
+    <form action="{% url 'GoalMakerWeb:create_user_api' %}" method="POST" content='text/html; charset=UTF-8'>
+
+        {% csrf_token %}
+        <label>
+            ID:
+            <input type="text" name="user_id">
+        </label><br>
+
+        <label>
+            Name:
+            <input type="text" name="name">
+        </label><br>
+
+        <label>
+            Password:
+            <input type="password" name="password">
+        </label><br>
+        <input type="submit">
+    </form>
+</body>
+</html>
