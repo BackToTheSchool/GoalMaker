@@ -140,7 +140,7 @@
 
 ### 3.2. Class Diagram
 
-#### ![Figure 2. Class Diagram Image](./md_images/Figure2_Class_Diagram.JPG)#### Figure 2. Class Diagram Image
+#### ![Figure 2. Class Diagram Image](./md_images/Figure2_Class_Diagram.JPG) 
 
 - Goal Class
 	- Attribute
