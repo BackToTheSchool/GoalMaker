@@ -46,7 +46,6 @@ def login_action(request):
 
 
 def create_user(request):
-    loader.get_template('')
     template = loader.get_template('GoalMakerWeb/create_user.html')
     return HttpResponse(template.render({}, request))
 
