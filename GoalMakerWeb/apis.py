@@ -9,10 +9,13 @@ from .models import User, Goal, Work
 @csrf_exempt
 def user_create(request):
     if request.method == 'POST':
-        data = json.loads(request_bytes_to_json(request))
-        user = User()
-        user.create(data['user_id'], data['password'], data['name'])
-    return JsonResponse({"Result": True})
+        if user_exist(request):
+            return JsonResponse({"Result": False})
+        else:
+            data = json.loads(request_bytes_to_json(request))
+            user = User()
+            user.create(data['user_id'], data['password'], data['name'])
+            return JsonResponse({"Result": True})
 
 
 @csrf_exempt
